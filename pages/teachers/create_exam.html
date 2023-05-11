@@ -94,7 +94,7 @@
                 </div>
                 <div class="col-md-6">
                     <label for="validationServer02" class="form-label">Length of exam</label>
-                    <input type="number" name="length" class="form-control" id="validationServer02" value="">
+                    <input type="number" name="examLength" class="form-control" id="validationServer02" value="">
                     <div class="valid-feedback d-none">
                         Looks good!
                     </div>
@@ -145,6 +145,15 @@
             const formData = new FormData(form);
             const data = Object.fromEntries(formData)
             console.log(data);
+
+            fetch('http://localhost:3000/teachers/create-exam-first-part', {
+            method: "POST",
+            headers: {
+                'Content-Type': "application/json"
+            },
+            body: JSON.stringify(data)
+           }).then(res => res.json())
+           .then( window.location.href = "./create_exam_part2.html" )
         })
     </script>
 

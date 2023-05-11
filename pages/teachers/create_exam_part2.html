@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Exam</title>
+
+    <!-- CDN Datatables starts here -->
+    <!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css" />
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script> -->
+
+    <!-- Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Rokkitt:wght@400;700&family=Rubik:wght@500&family=Source+Serif+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;1,200;1,300;1,400;1,600;1,700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
+    <!-- <script src="https://kit.fontawesome.com/59d377ced1.js" crossorigin="anonymous"></script> -->
+
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+    <header class="fixed-top p-2 px-lg-5">
+
+        <div class="d-flex flex-row align-items-center">
+            <div class="px-2 px-lg-4"><img src="/img/avatar2.png" alt="Profile Pic" class="" width="40px"></div>
+            <div class="message">
+                Hello <span id="user_id"> User!</span>
+            </div>
+            <div class="ms-auto px-2 "><i class="fa fa-message"></i></div>
+            <div class="px-2 "><i class="fa fa-bell"></i></div>
+            <div class="px-2 "><i class="fa fa-sign-out"></i></div>
+        </div>
+
+    </header>
+
+    <aside class="d-none d-md-block">
+        <nav>
+            <ul class="p-0">
+                <li class="title p-md-3">KodeVamp's Classroom</li>
+                <li class=""><a href="./home.html"><i class="fa fa-home p-md-3 "></i>Home</a></li>
+                <li class=""><a href="./profile.html"><i class="fa fa-user p-md-3 "></i>Profile</a></li>
+                <li class=""><a href="./students.html"><i class="fa fa-users p-md-3 "></i>Students</a></li>
+                <li class=""><a href="./students.html"><i class="fa fa- fa-list-alt p-md-3 "></i>Grades</a></li>
+                <li class=""><a href="./attendance.html"><i class="fa fa-bars p-md-3 "></i>Attendance</a></li>
+                <li class="active"><a href="./exams.html"><i class="fa fa-table p-md-3 "></i>Exams</a></li>
+        </nav>
+    </aside>
+
+    <section class="main-content">
+
+        <div class="container">
+            <h5 id="subject">Subject: </h5>
+            <h6 id="title">Title: </h6>
+            <h6 id="description">Description: </h6>
+        </div>
+
+    </section>
+
+    <footer>
+
+    </footer>
+
+    <!-- JS and Popper CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+
+    <!-- Custom Script -->
+    <!-- <script src="/scripts/main.js" type="module"></script> -->
+
+    <script>
+        const url = 'http://localhost:3000/teachers/get-exam/0'
+        fetch(url)
+        .then(res => res.json())
+        .then(data => {
+            console.log(data.subject)
+            document.querySelector("#subject").textContent += data.subject
+            document.querySelector("#title").textContent += data.title
+            document.querySelector("#description").textContent += data.desc
+        })
+
+    </script>
+
+</body>
+
+</html>
+
+
