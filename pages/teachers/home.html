@@ -144,27 +144,25 @@
   <script src="../../main.js"></script>
 
   <script>
-    //Get Students
-    fetch('http://localhost:3000/teachers/get-students')
-      .then(res => res.json())
-      .then(student => {
-        // console.log(student[0].fname)
-        const table = document.querySelector("#usersTable");
-          document.querySelector("#students-list").textContent = student.length;
-        let row = document.querySelector("#users");
-        student.forEach(el => {
-          row = `
-            <td>${el.id}</td>
-            <td>${el.fname}</td>
-            <td>${el.lname}</td>
-            <td>${el.gender}</td>
-            <td>${el.age}</td>
-            `
-          table.innerHTML += row;
+        fetch('http://localhost:3000/teachers/get-students')
+        .then(res => res.json())
+        .then(student => {
+        //   const table = document.querySelector("#usersTable");
+        //     document.querySelector("#students-list").textContent = student.length;
+          let tbody = document.querySelector("#usersData");
+          student.forEach(el => {
+            let row = `<tr>
+              <td>${el.id}</td>
+              <td>${el.fname}</td>
+              <td>${el.lname}</td>
+              <td>${el.gender}</td>
+              <td>${el.age}</td>
+              </tr>
+              `
+            tbody.innerHTML += row;
+          });
+  
         });
-
-      });
-
   </script>
 
 </body>

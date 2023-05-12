@@ -35,7 +35,7 @@
         <div class="d-flex flex-row align-items-center">
             <div class="px-2 px-lg-4"><img src="/img/avatar2.png" alt="Profile Pic" class="" width="40px"></div>
             <div class="message">
-                Hello <span id="user_id"> User!</span>
+                Hello <span id="user_name"> User!</span>
             </div>
             <div class="ms-auto px-2 "><i class="fa fa-message"></i></div>
             <div class="px-2 "><i class="fa fa-bell"></i></div>
@@ -80,7 +80,8 @@
     <!-- <script src="/scripts/main.js" type="module"></script> -->
 
     <script>
-        const url = 'http://localhost:3000/teachers/get-exam/0'
+        const id = 7;
+        const url = `http://localhost:3000/teachers/get-exam/${id}`
         fetch(url)
         .then(res => res.json())
         .then(data => {

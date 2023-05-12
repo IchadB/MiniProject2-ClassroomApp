@@ -35,7 +35,7 @@
         <div class="d-flex flex-row align-items-center">
             <div class="px-2 px-lg-4"><img src="/img/avatar2.png" alt="Profile Pic" class="" width="40px"></div>
             <div class="message">
-                Hello <span id="user_id"> User!</span>
+                Hello <span id="user_name"> User!</span>
             </div>
             <div class="ms-auto px-2 "><i class="fa fa-message"></i></div>
             <div class="px-2 "><i class="fa fa-bell"></i></div>
@@ -101,7 +101,7 @@
                 </div>
 
                 <div class="col-12 my-4">
-                    <button class="btn btn-outline-danger" type="submit">Start</button>
+                    <button id="submit-btn" class="btn btn-outline-danger" type="submit">Start</button>
                 </div>
             </div>
             </form>
@@ -123,7 +123,7 @@
     <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script> -->
 
     <!-- Custom Script -->
-    <!-- <script src="/scripts/main.js" type="module"></script> -->
+    <script src="../../main.js" type="module"></script>
 
     <script>
         // const subject = document.getElementsByName("subject").value;
@@ -131,30 +131,7 @@
         // const desc = document.getElementsByName("desc").value;
         // const lengthOfExam = document.getElementsByName("length").value;
         // console.log(subject, title)
-        const form = document.getElementById("create-exam");
-        
-        // const formData = new FormData(form);
-        // const data = Object.fromEntries(formData);
-        // console.log(data.length)
-
-        // const form = document.querySelector("#reg-student");
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-        
-            
-            const formData = new FormData(form);
-            const data = Object.fromEntries(formData)
-            console.log(data);
-
-            fetch('http://localhost:3000/teachers/create-exam-first-part', {
-            method: "POST",
-            headers: {
-                'Content-Type': "application/json"
-            },
-            body: JSON.stringify(data)
-           }).then(res => res.json())
-           .then( window.location.href = "./create_exam_part2.html" )
-        })
+   
     </script>
 
 </body>
