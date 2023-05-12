@@ -39,10 +39,13 @@ registerButton.addEventListener("click", function (event) {
   const formData = {
     fname: firstName,
     lname: lastName,
+    username: username,
+    contact: 12345, // added field
     gender: gender.value,
     age: age,
-    username: username,
-    password: password
+    address: "Lapacan",  // added field
+    password: password,
+    password2: confirmPassword
   };
 
   fetch('http://localhost:3000/students/reg-student', {
