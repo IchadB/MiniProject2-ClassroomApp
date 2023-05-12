@@ -14,6 +14,8 @@ registerButton.addEventListener("click", (event) => {
   const username = document.getElementById("username").value;
   const password = document.getElementById("password").value;
   const confirmPassword = document.getElementById("confirm-password").value;
+  const address = document.getElementById("address").value;
+  const contact = document.getElementById("contact").value;
 
   // check for empty input fields
   if (
@@ -23,7 +25,9 @@ registerButton.addEventListener("click", (event) => {
     age.trim() === "" ||
     username.trim() === "" ||
     password.trim() === "" ||
-    confirmPassword.trim() === ""
+    confirmPassword.trim() === "" ||
+    address.trim() === "" ||
+    contact.trim() === ""
   ) {
     alert("Please fill in all required fields");
     return;
@@ -43,9 +47,12 @@ registerButton.addEventListener("click", (event) => {
     age: age,
     username: username,
     password: password,
+    password2: confirmPassword,
+    address: address,
+    contact: contact,
   };
 
-  fetch("http://localhost:3000/teachers/add-student", {
+  fetch("http://localhost:3000/teachers/reg-student", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -56,7 +63,7 @@ registerButton.addEventListener("click", (event) => {
     .then((data) => {
       data.status
         ? (window.location.href = "../students/home.html")
-        : alert("Please fill out all fields")
+        : alert("Please fill out all fields");
     });
 
   // reset the form
