@@ -2,7 +2,7 @@
 const registerButton = document.querySelector(".register-button");
 
 // add a click event listener to the register button
-registerButton.addEventListener("click", function (event) {
+registerButton.addEventListener("click", (event) => {
   // prevent the default form submission behavior
   event.preventDefault();
 
@@ -45,7 +45,7 @@ registerButton.addEventListener("click", function (event) {
     password: password,
   };
 
-  fetch("http://localhost:3000/students/reg-student", {
+  fetch("http://localhost:3000/teachers/add-student", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -56,7 +56,7 @@ registerButton.addEventListener("click", function (event) {
     .then((data) => {
       data.status
         ? (window.location.href = "../students/home.html")
-        : alert("Please fill out all fields");
+        : alert("Please fill out all fields")
     });
 
   // reset the form
