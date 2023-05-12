@@ -61,29 +61,29 @@
             <h1>Daily Attendance Form</h1>
             <p>Please accomplish this form to confirm your attendance</p>
             <div class="row">
-                <div class="col-md-6">
-                    <label for="firstname">First name:</label>
-                    <br>
-                    <input type="text" placeholder="Enter your first name" required>
-                </div>
-                <div class="col-md-6">
-                    <label for="lastname">Last name:</label>
-                    <br>
-                    <input type="text" placeholder="Enter your last name" required>
-                </div>
-                <div class="col-md-6">
-                    <label for="full-name">Date:</label>
-                    <br>
-                   <input type="date" name="" id="">
-                </div>
-                <div class="col-md-6">
-                    <label for="full-name">Time:</label>
-                    <br>
-                   <input type="time" name="" id="">
+                <div class="col-md-12">
+                    <form action="/action_page.php" method="post">
+                        <div class="col-md-6">
+                            <label for="firstname">First name:</label>
+                            <input class="input-form" type="text" placeholder="Enter your first name" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="lastname">Last name:</label>
+                            <input class="input-form" type="text" placeholder="Enter your last name" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="date">Date:</label>
+                            <input class="input-form" type="date" name="" id="" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="time">Time:</label>
+                            <input class="input-form" type="time" name="" id="" required>
+                        </div>
+                        <br>
+                        <button class="login-button" type="submit">Submit</button>
+                    </form>
                 </div>
             </div>
-            <br>
-            <button type="submit">Submit</button>
         </div>
     </section>
 

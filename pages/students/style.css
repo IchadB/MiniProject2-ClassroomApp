@@ -75,3 +75,19 @@ section.attendance-form {
   float: right;
   margin-top: 70px;
 }
+
+.input-form {
+  box-sizing: border-box;
+  width: 100%;
+  height: 30px;
+  border-radius: 5px;
+}
+
+.login-button {
+  /* position: absolute;
+  left: 300px; */
+  padding: 5px;
+  width: 50%;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
