@@ -60,51 +60,9 @@
     <section class="main-content">
 
         <div class="container">
-
-          <h5 class="mt-3">Creating Exam</h5><hr>
-            <form action="" id="create-exam">
-
-            <div class="row g-3 me-5 mt-3">
-
-                <div class="col-md-6">
-                    <label for="validationServer04" class="form-label">Select Subject</label>
-                    <select class="form-select subject" name="subject" id="validationServer04"
-                        aria-describedby="validationServer04Feedback">
-                        <option selected disabled value="">Choose...</option>
-                        <option value="Math">Math</option>
-                        <option value="English">English</option>
-                    </select>
-                    <div id="validationServer04Feedback" class="invalid-feedback d-none">
-                        Please select a valid state.
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <label for="validationServer01" class="form-label">Title</label>
-                    <input type="text" name="title" class="form-control" id="validationServer01" value="">
-                    <div class="valid-feedback d-none">
-                        Looks good!
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <label for="validationServer01" class="form-label">Description</label>
-                    <input type="text" name="desc" class="form-control" id="validationServer01" value="">
-                    <div class="valid-feedback d-none">
-                        Looks good!
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <label for="validationServer02" class="form-label">Length of exam</label>
-                    <input type="number" name="examLength" class="form-control" id="validationServer02" value="">
-                    <div class="valid-feedback d-none">
-                        Looks good!
-                    </div>
-                </div>
-
-                <div class="col-12 my-4">
-                    <button id="submit-btn" class="btn btn-outline-danger" type="submit">Start</button>
-                </div>
-            </div>
-            </form>
+            <h5 id="subject">Subject: </h5>
+            <h6 id="title">Title: </h6>
+            <h6 id="description">Description: </h6>
         </div>
 
     </section>
@@ -118,20 +76,21 @@
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
         crossorigin="anonymous"></script>
 
-    <!-- Datatable CDN loader/helper starts here -->
-    <!-- <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script> -->
-
     <!-- Custom Script -->
-    <script src="../../main.js" type="module"></script>
+    <!-- <script src="/scripts/main.js" type="module"></script> -->
 
     <script>
-        // const subject = document.getElementsByName("subject").value;
-        // const title = document.getElementsByName("title").value;
-        // const desc = document.getElementsByName("desc").value;
-        // const lengthOfExam = document.getElementsByName("length").value;
-        // console.log(subject, title)
-   
+        const id = 7;
+        const url = `http://localhost:3000/teachers/get-exam/${id}`
+        fetch(url)
+        .then(res => res.json())
+        .then(data => {
+            console.log(data.subject)
+            document.querySelector("#subject").textContent += data.subject
+            document.querySelector("#title").textContent += data.title
+            document.querySelector("#description").textContent += data.desc
+        })
+
     </script>
 
 </body>
@@ -139,14 +98,3 @@
 </html>
 
 
-<!-- <main>
-        <form action="">
-            <label for="subjects">Choose Subject</label>
-            <select name="subjects" id="subject-list">
-                <option value="">Math</option>
-                <option value="">English</option>
-                <option value="">Science</option>
-            </select>
-            <button type="submit">Submit</button>
-        </form>
-    </main> -->

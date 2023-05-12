@@ -44,10 +44,19 @@
             body: JSON.stringify(data)
            }).then(res => res.json())
            .then(data => {
-            !data.status
-                ? alert("User not found")
-                : window.location.href = "../students/home.html"
-           })
+            // !data.status
+            //     ? alert("User not found")
+            //     : window.location.href = "../students/home.html"
+            if(data.value === "Teacher"){
+                window.location.href = "../teachers/home.html"
+            } else if(data.value === "Student"){
+                window.location.href = "../students/home.html"
+                // console.log(data.user)
+            } else {
+                // alert("User not found")
+            }
+            // console.log(data)
+           }).catch(error => console.log(res.error))
         })
      
     </script>

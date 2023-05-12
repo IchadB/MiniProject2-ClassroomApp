@@ -63,7 +63,7 @@
             <hr>
         </section>
         <section  class="me-5 my-3">
-                <table id="usersTable" class="display table table-hover" style="width:98%">
+                <table id="usersTable2" class="display table table-hover" style="width:98%">
                     <thead>
                         <tr>
                             <th>ID</th>
@@ -75,7 +75,7 @@
                             <th>Contact</th>
                         </tr>
                     </thead>
-                    <tbody id="usersData">
+                    <tbody id="usersData2">
                         <!-- JavaScript Users Data here -->
                     </tbody>
                 </table>
@@ -95,16 +95,17 @@
     <!-- Custom Script -->
     <script src="../../main.js" type="module"></script>
     <script>
-        //Get Students
-        fetch('http://localhost:3000/teachers/get-students')
+       //Get Students
+       fetch('http://localhost:3000/teachers/get-students')
           .then(res => res.json())
           .then(student => {
 
-            const table = document.querySelector("#usersTable");
+            // const table = document.querySelector("#usersTable2");
 
-            let row = document.querySelector("#users");
+            let tbody = document.querySelector("#usersData2");
             student.forEach(el => {
-              row = `
+             let row = `
+             <tr>
                     <td>${el.id + 1}</td>
                     <td>${el.fname}</td>
                     <td>${el.lname}</td>
@@ -112,9 +113,9 @@
                     <td>${el.gender}</td>
                     <td>${el.age}</td>
                     <td>${el.contact}</td>
-                   
+                   </tr>
                     `
-              table.innerHTML += row;
+              tbody.innerHTML += row;
             });
     
           });
