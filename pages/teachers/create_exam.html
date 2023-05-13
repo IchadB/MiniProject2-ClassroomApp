@@ -126,11 +126,25 @@
     <script src="../../main.js" type="module"></script>
 
     <script>
-        // const subject = document.getElementsByName("subject").value;
-        // const title = document.getElementsByName("title").value;
-        // const desc = document.getElementsByName("desc").value;
-        // const lengthOfExam = document.getElementsByName("length").value;
-        // console.log(subject, title)
+         const form = document.getElementById("create-exam");
+     
+         form.addEventListener('submit', (e) => {
+        e.preventDefault();
+    
+        
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData)
+
+        fetch('http://localhost:3000/teachers/create-exam-first-part', {
+        method: "POST",
+        headers: {
+            'Content-Type': "application/json"
+        },
+        body: JSON.stringify(data)
+       }).then(res => res.json())
+       .then( window.location.href = "./create_exam_part2.html" )
+    })
+
    
     </script>
 

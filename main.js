@@ -21,6 +21,9 @@
 
 // TEACHER DATA - GET METHOD
 // const getTeacher = () => {
+
+
+
     fetch('http://localhost:3000/teachers/get-teachers')
     .then(res => res.json())
     .then(data => {
@@ -28,6 +31,11 @@
 
         document.querySelector("#user_name").textContent = teacher.fname
     }).catch(error => console.log(error))
+
+
+
+
+
 // }
 // getTeacher();
 

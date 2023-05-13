@@ -43,10 +43,13 @@ registerButton.addEventListener("click", (event) => {
   const formData = {
     fname: firstName,
     lname: lastName,
+    username: username,
+    contact: 12345, // added field
     gender: gender.value,
     age: age,
-    username: username,
+    address: "Lapacan",  // added field
     password: password,
+    password2: confirmPassword,
     password2: confirmPassword,
     address: address,
     contact: contact,

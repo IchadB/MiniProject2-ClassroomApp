@@ -108,9 +108,24 @@ li.active {
 
 
 /* SIR RICHARD CSS CODES STARTS HERE */
-
+section#nav_2 {
+    position: fixed;
+    top: 6px;
+    right: 10px;
+    z-index: 10;
+    width: 100%;
+}
 .create_exam_form{
     width: 90%;
 }
 
+@media (max-width: 767px) {
+    section.main-content {
+        width: 100%;
+        margin-top: 110px;
+        padding-left: 50px;
+    }
+}
+
 /* SIR RICHARD CSS CODES ENDS HERE */
+
